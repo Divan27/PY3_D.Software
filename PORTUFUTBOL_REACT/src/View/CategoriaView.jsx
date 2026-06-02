@@ -1,0 +1,1 @@
+export default ()=> <ul><li>Balones</li><li>Uniformes</li><li>Tacos</li></ul>

@@ -1,0 +1,1 @@
+export default ()=> <div><h2>Bienvenido a PORTUFUTBOL</h2></div>

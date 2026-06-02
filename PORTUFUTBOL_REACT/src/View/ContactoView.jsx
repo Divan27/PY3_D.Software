@@ -1,0 +1,1 @@
+export default ()=> <div><p>Instagram</p><p>Facebook</p><p>WhatsApp</p></div>
