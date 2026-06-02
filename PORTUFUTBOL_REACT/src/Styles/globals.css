@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app.dark {
+  background: #0F172A;
+  color: white;
+  min-height: 100vh;
+}
+
+.app.light {
+  background: #F8FAFC;
+  color: #0F172A;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  background: #1E293B;
+
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header nav {
+  display: flex;
+  gap: 10px;
+}
+
+.header button {
+  border: none;
+
+  background: #22C55E;
+
+  color: white;
+
+  padding: 10px 15px;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+}
+
+.header input {
+  width: 250px;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  border: none;
+}
+
+.hero {
+
+  text-align: center;
+
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 52px;
+
+  margin-bottom: 20px;
+}
+
+.hero p {
+
+  font-size: 20px;
+
+  margin-bottom: 30px;
+}
+
+.hero button {
+
+  background: #22C55E;
+
+  color: white;
+
+  border: none;
+
+  padding: 15px 25px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
