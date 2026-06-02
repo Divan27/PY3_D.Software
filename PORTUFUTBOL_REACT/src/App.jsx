@@ -1,21 +1,66 @@
-import {useState} from 'react';
-import InicioView from './View/InicioView';
-import ProductosView from './View/ProductosView';
-import CategoriaView from './View/CategoriaView';
-import ContactoView from './View/ContactoView';
+import { useState } from "react";
 
-export default function App(){
- const [v,setV]=useState('inicio');
- return <div style={{fontFamily:'Arial',padding:'20px'}}>
- <h1>PORTUFUTBOL</h1>
- <button onClick={()=>setV('inicio')}>Inicio</button>{' '}
- <button onClick={()=>setV('productos')}>Productos</button>{' '}
- <button onClick={()=>setV('categorias')}>Categorías</button>{' '}
- <button onClick={()=>setV('contacto')}>Contacto</button>
- <hr/>
- {v==='inicio'&&<InicioView/>}
- {v==='productos'&&<ProductosView/>}
- {v==='categorias'&&<CategoriaView/>}
- {v==='contacto'&&<ContactoView/>}
- </div>
+import Header from "./Components/Header";
+
+import InicioView from "./View/InicioView";
+import ProductosView from "./View/ProductosView";
+import CategoriaView from "./View/CategoriaView";
+import ContactoView from "./View/ContactoView";
+
+import ThemeController from "./Controller/ThemeController";
+
+import "./styles/globals.css";
+
+export default function App() {
+
+  const themeController =
+    ThemeController.getInstance();
+
+  const [tema, setTema] =
+    useState(themeController.getTheme());
+
+  const [vista, setVista] =
+    useState("inicio");
+
+  const [buscar, setBuscar] =
+    useState("");
+
+  const toggleTheme = () => {
+
+    themeController.toggleTheme();
+
+    setTema(
+      themeController.getTheme()
+    );
+  };
+
+  return (
+    <div className={`app ${tema}`}>
+
+      <Header
+        cambiarVista={setVista}
+        buscar={buscar}
+        setBuscar={setBuscar}
+        toggleTheme={toggleTheme}
+        tema={tema}
+      />
+
+      {vista === "inicio" &&
+        <InicioView />
+      }
+
+      {vista === "productos" &&
+        <ProductosView />
+      }
+
+      {vista === "categorias" &&
+        <CategoriaView />
+      }
+
+      {vista === "contacto" &&
+        <ContactoView />
+      }
+
+    </div>
+  );
 }
