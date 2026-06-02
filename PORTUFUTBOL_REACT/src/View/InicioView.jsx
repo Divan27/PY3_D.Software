@@ -1,1 +1,9 @@
-export default ()=> <div><h2>Bienvenido a PORTUFUTBOL</h2></div>
+import HeroSection from "../Components/HeroSection";
+
+export default function InicioView() {
+  return (
+    <>
+      <HeroSection />
+    </>
+  );
+}
