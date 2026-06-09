@@ -43,4 +43,3 @@ class ThemeController {
 }
 
 export default ThemeController;
-export default ThemeController;
