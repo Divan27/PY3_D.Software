@@ -24,45 +24,45 @@ import mercurial from "../assets/zapatos/mercurial.jpg";
 import predator from "../assets/zapatos/predator.jpg";
 import regate from "../assets/zapatos/regate.jpg";
 
-export default function InicioView() {
+export default function InicioView({ toggleTheme }) {
 
     const jugadores = [
 
-        { numero:1 , nombre:"MESSI" , imagen:messi },
-        { numero:2 , nombre:"CRISTIANO" , imagen:cristiano },
-        { numero:3 , nombre:"HAALAND" , imagen:haaland },
-        { numero:4 , nombre:"MBAPPÉ" , imagen:mbappe },
-        { numero:5 , nombre:"BELLINGHAM" , imagen:bellingham },
+        { numero: 1, nombre: "MESSI", imagen: messi },
+        { numero: 2, nombre: "CRISTIANO", imagen: cristiano },
+        { numero: 3, nombre: "HAALAND", imagen: haaland },
+        { numero: 4, nombre: "MBAPPÉ", imagen: mbappe },
+        { numero: 5, nombre: "BELLINGHAM", imagen: bellingham },
 
-        { numero:6 , nombre:"VINICIUS JR." , imagen:vinicius },
-        { numero:7 , nombre:"RODRI" , imagen:rodri },
-        { numero:8 , nombre:"SALAH" , imagen:salah },
-        { numero:9 , nombre:"KANE" , imagen:kane },
-        { numero:10 , nombre:"LAUTARO" , imagen:lautaro }
+        { numero: 6, nombre: "VINICIUS JR.", imagen: vinicius },
+        { numero: 7, nombre: "RODRI", imagen: rodri },
+        { numero: 8, nombre: "SALAH", imagen: salah },
+        { numero: 9, nombre: "KANE", imagen: kane },
+        { numero: 10, nombre: "LAUTARO", imagen: lautaro }
 
     ];
 
     const productos = [
 
         {
-            nombre:"TACOS DE FÚTBOL",
-            descripcion:"Nike Mercurial Vapor",
-            precio:"219.999",
-            imagen:mercurial
+            nombre: "NIKE MERCURIAL",
+            descripcion: "Velocidad Profesional",
+            precio: "₡219.999",
+            imagen: mercurial
         },
 
         {
-            nombre:"TENIS FÚTBOL SALA",
-            descripcion:"Adidas Predator",
-            precio:"139.999",
-            imagen:predator
+            nombre: "ADIDAS PREDATOR",
+            descripcion: "Control Total",
+            precio: "₡189.999",
+            imagen: predator
         },
 
         {
-            nombre:"TENIS FUTSALA",
-            descripcion:"Joma Regate",
-            precio:"129.999",
-            imagen:regate
+            nombre: "JOMA REGATE",
+            descripcion: "Futsala Profesional",
+            precio: "₡129.999",
+            imagen: regate
         }
 
     ];
@@ -70,8 +70,7 @@ export default function InicioView() {
     return (
 
         <>
-
-            <Header />
+            <Header toggleTheme={toggleTheme} />
 
             <div className="main-content">
 
@@ -81,19 +80,21 @@ export default function InicioView() {
 
                     <section className="section-container">
 
+                        <h2 className="section-title">
+                            ⭐ TOP 10 JUGADORES
+                        </h2>
+
                         <div className="players-grid">
 
                             {
-                                jugadores.map(
-                                    jugador => (
+                                jugadores.map(jugador => (
 
-                                        <JugadorCard
-                                            key={jugador.numero}
-                                            {...jugador}
-                                        />
+                                    <JugadorCard
+                                        key={jugador.numero}
+                                        {...jugador}
+                                    />
 
-                                    )
-                                )
+                                ))
                             }
 
                         </div>
@@ -109,16 +110,14 @@ export default function InicioView() {
                         <div className="products-grid">
 
                             {
-                                productos.map(
-                                    (producto,index)=>(
+                                productos.map((producto, index) => (
 
-                                        <ProductCard
-                                            key={index}
-                                            {...producto}
-                                        />
+                                    <ProductCard
+                                        key={index}
+                                        {...producto}
+                                    />
 
-                                    )
-                                )
+                                ))
                             }
 
                         </div>
@@ -135,12 +134,60 @@ export default function InicioView() {
 
                 </div>
 
+                <aside className="company-panel">
+
+                    <h3>⚽ PORTUFUTBOL</h3>
+
+                    <p>
+                        La tienda especializada en fútbol más
+                        completa para jugadores, aficionados
+                        y clubes deportivos.
+                    </p>
+
+                    <div className="company-info">
+
+                        <span>
+                            🚚 Entrega inmediata
+                        </span>
+
+                        <span>
+                            🛡️ Compra segura
+                        </span>
+
+                        <span>
+                            📞 Atención personalizada
+                        </span>
+
+                        <span>
+                            ⚽ Productos originales
+                        </span>
+
+                        <span>
+                            🏆 Mundial 2026
+                        </span>
+
+                    </div>
+
+                    <div className="company-social">
+
+                        <h4>Redes Sociales</h4>
+
+                        <p>📘 Facebook</p>
+
+                        <p>📸 Instagram</p>
+
+                        <p>🎵 TikTok</p>
+
+                        <p>▶ YouTube</p>
+
+                    </div>
+
+                </aside>
+
             </div>
 
             <WhatsAppButton />
 
         </>
-
     );
-
 }
