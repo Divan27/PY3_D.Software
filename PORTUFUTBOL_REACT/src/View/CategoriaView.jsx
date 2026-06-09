@@ -1,1 +1,19 @@
-export default ()=> <ul><li>Balones</li><li>Uniformes</li><li>Tacos</li></ul>
+export default function CategoriaView() {
+
+    return (
+
+        <div>
+
+            <h1>
+                Categorías
+            </h1>
+
+            <p>
+                Categorías disponibles.
+            </p>
+
+        </div>
+
+    );
+
+}
