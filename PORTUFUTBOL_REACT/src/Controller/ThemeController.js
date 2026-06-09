@@ -1,32 +1,46 @@
 import ThemeManager from "../Model/ThemeManager";
 
 class ThemeController {
-  static instance = null;
 
-  constructor() {
-    if (ThemeController.instance) {
-      return ThemeController.instance;
+    static instance = null;
+
+    constructor() {
+
+        if (ThemeController.instance) {
+            return ThemeController.instance;
+        }
+
+        this.themeManager =
+            ThemeManager.getInstance();
+
+        ThemeController.instance = this;
     }
 
-    this.themeManager = ThemeManager.getInstance();
-    ThemeController.instance = this;
-  }
+    static getInstance() {
 
-  static getInstance() {
-    if (!ThemeController.instance) {
-      ThemeController.instance = new ThemeController();
+        if (!ThemeController.instance) {
+
+            ThemeController.instance =
+                new ThemeController();
+
+        }
+
+        return ThemeController.instance;
     }
 
-    return ThemeController.instance;
-  }
+    getTheme() {
 
-  getTheme() {
-    return this.themeManager.getTheme();
-  }
+        return this.themeManager.getTheme();
 
-  toggleTheme() {
-    this.themeManager.toggleTheme();
-  }
+    }
+
+    toggleTheme() {
+
+        this.themeManager.toggleTheme();
+
+    }
+
 }
 
+export default ThemeController;
 export default ThemeController;
