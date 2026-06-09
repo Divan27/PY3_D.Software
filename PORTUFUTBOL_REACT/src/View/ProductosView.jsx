@@ -1,7 +1,19 @@
+export default function ProductosView() {
 
-import c from '../Controller/ProductoController';
-import ProductCard from '../Components/ProductCard';
-export default function(){
-    const p=c.obtenerProductos();
-    return <div>{p.map(x=><ProductCard key={x.id} producto={x}/>)}</div>
+    return (
+
+        <div>
+
+            <h1>
+                Productos
+            </h1>
+
+            <p>
+                Catálogo completo de artículos.
+            </p>
+
+        </div>
+
+    );
+
 }
