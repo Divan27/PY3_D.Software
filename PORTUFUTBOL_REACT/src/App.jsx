@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import InicioView from "./View/InicioView";
-
 import ThemeController from "./Controller/ThemeController";
 
 function App() {
