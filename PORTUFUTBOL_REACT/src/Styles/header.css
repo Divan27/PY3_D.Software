@@ -1,184 +1,380 @@
+/* ===================================== */
+/* HEADER PRINCIPAL */
+/* ===================================== */
+
 .header{
 
-  display:flex;
+    display:flex;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  align-items:center;
+    align-items:center;
 
-  padding:15px 25px;
+    padding:15px 35px;
 
-  backdrop-filter:blur(10px);
+    position:sticky;
 
-  position:sticky;
+    top:0;
 
-  top:0;
+    z-index:1000;
 
-  z-index:999;
+    backdrop-filter:blur(15px);
 
-  background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,0.35);
 
-  border-bottom:1px solid rgba(57,255,20,.3);
+    border-bottom:2px solid rgba(255,255,255,0.1);
 }
+
+/* ===================================== */
+/* LOGO */
+/* ===================================== */
 
 .logo-container{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:15px;
+    gap:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
 }
 
-.logo{
+.logo-container:hover{
 
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  cursor:pointer;
+    transform:scale(1.03);
 }
 
-.logo img{
+.logo-image{
 
-  width:55px;
+    width:85px;
 
-  height:55px;
+    height:85px;
 
-  border-radius:50%;
+    object-fit:contain;
+
+    transition:0.4s;
 }
 
-.logo h1{
+.logo-container:hover .logo-image{
 
-  color:white;
-
-  font-size:2rem;
-
-  font-weight:900;
-
-  letter-spacing:2px;
-
-  text-shadow:
-  0 0 5px #fff,
-  0 0 15px #39ff14;
+    transform:rotate(-8deg);
 }
 
-.menu-btn{
+.logo-text{
 
-  width:50px;
+    display:flex;
 
-  height:50px;
-
-  border:none;
-
-  border-radius:50%;
-
-  cursor:pointer;
-
-  font-size:24px;
+    flex-direction:column;
 }
 
-.search-box{
+.logo-main{
 
-  width:70px;
+    font-family:'Orbitron', sans-serif;
 
-  overflow:hidden;
+    font-size:2.2rem;
 
-  transition:0.5s;
+    font-weight:900;
 
-  background:white;
+    letter-spacing:5px;
 
-  border-radius:50px;
+    color:#00ff88;
 
-  display:flex;
+    text-shadow:
+        0 0 5px #00ff88,
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 40px rgba(0,255,136,.6);
 
-  align-items:center;
-
-  padding:10px;
+    line-height:1;
 }
 
-.search-box:hover{
+.logo-secondary{
 
-  width:450px;
+    font-family:'Orbitron', sans-serif;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    letter-spacing:10px;
+
+    color:white;
+
+    text-transform:uppercase;
+
+    line-height:1.1;
 }
 
-.search-box input{
+/* ===================================== */
+/* BUSCADOR FUTBOLERO */
+/* ===================================== */
 
-  border:none;
+.football-search{
 
-  outline:none;
+    position:relative;
 
-  width:100%;
+    display:flex;
 
-  margin-left:10px;
+    align-items:center;
+
+    width:70px;
+
+    height:65px;
+
+    overflow:hidden;
+
+    border-radius:40px;
+
+    border:3px solid white;
+
+    background:rgba(255,255,255,0.08);
+
+    transition:all 0.5s ease;
 }
 
-.search-icon{
+.football-search:hover{
 
-  font-size:28px;
+    width:420px;
 }
+
+.football-icon{
+
+    min-width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+.football-search input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:1rem;
+
+    padding-right:20px;
+}
+
+.football-search input::placeholder{
+
+    color:rgba(255,255,255,0.8);
+}
+
+/* Línea tipo cancha */
+
+.football-search::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:white;
+}
+
+/* ===================================== */
+/* BOTONES DERECHA */
+/* ===================================== */
 
 .header-actions{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:10px;
+    gap:12px;
 }
 
-.delivery-btn{
-
-  background:#22c55e;
-
-  color:white;
-
-  border:none;
-
-  padding:10px 15px;
-
-  border-radius:12px;
-
-  cursor:pointer;
-
-  font-weight:bold;
-}
-
+.access-btn,
 .theme-btn{
 
-  width:45px;
+    width:60px;
 
-  height:45px;
+    height:60px;
 
-  border:none;
+    border-radius:50%;
 
-  border-radius:50%;
+    border:3px solid white;
 
-  cursor:pointer;
+    background:#00c853;
 
-  font-size:20px;
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    transition:0.3s;
 }
 
-.accessibility-menu{
+.access-btn:hover,
+.theme-btn:hover{
 
-  display:flex;
+    transform:scale(1.1);
 
-  gap:8px;
+    box-shadow:0 0 20px #00ff88;
 }
 
-.accessibility-menu button{
+/* ===================================== */
+/* MODO OSCURO */
+/* ===================================== */
 
-  width:45px;
+.dark .header{
 
-  height:45px;
+    background:rgba(0,0,0,0.40);
+}
 
-  border-radius:50%;
+.dark .logo-main{
 
-  border:none;
+    color:#00ff88;
+}
 
-  cursor:pointer;
+.dark .logo-secondary{
 
-  font-size:18px;
+    color:white;
+}
+
+/* ===================================== */
+/* MODO CLARO */
+/* ===================================== */
+
+.light .header{
+
+    background:rgba(255,255,255,0.70);
+}
+
+.light .logo-main{
+
+    color:#008f5a;
+
+    text-shadow:
+        0 0 5px rgba(0,143,90,.3);
+}
+
+.light .logo-secondary{
+
+    color:#16324f;
+}
+
+.light .football-search{
+
+    border-color:#16324f;
+}
+
+.light .football-search::after{
+
+    background:#16324f;
+}
+
+.light .football-search input{
+
+    color:#16324f;
+}
+
+.light .football-search input::placeholder{
+
+    color:#5c6f82;
+}
+
+.light .access-btn,
+.light .theme-btn{
+
+    background:#16324f;
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
+
+@media(max-width:1200px){
+
+    .football-search:hover{
+
+        width:280px;
+    }
+
+    .logo-main{
+
+        font-size:1.6rem;
+    }
+}
+
+@media(max-width:992px){
+
+    .header{
+
+        flex-wrap:wrap;
+
+        gap:15px;
+    }
+
+    .football-search{
+
+        order:3;
+
+        width:100%;
+    }
+
+    .football-search:hover{
+
+        width:100%;
+    }
+}
+
+@media(max-width:768px){
+
+    .logo-image{
+
+        width:65px;
+
+        height:65px;
+    }
+
+    .logo-main{
+
+        font-size:1.3rem;
+    }
+
+    .logo-secondary{
+
+        font-size:1rem;
+
+        letter-spacing:4px;
+    }
+
+    .access-btn,
+    .theme-btn{
+
+        width:50px;
+
+        height:50px;
+    }
 }
