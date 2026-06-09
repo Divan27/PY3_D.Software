@@ -1,10 +1,6 @@
-import SearchBar from "./SearchBar";
 import ThemeToggle from "./ThemeToggle";
-import AccessibilityMenu from "./AccessibilityMenu";
 
-import logo from "../assets/logos/logo.jpg";
-
-export default function Header() {
+export default function Header({ toggleTheme }) {
 
     return (
 
@@ -12,36 +8,51 @@ export default function Header() {
 
             <div className="logo-container">
 
-                <button className="menu-btn">
-                    ☰
-                </button>
+                <img
+                    src="/src/assets/logos/logo.jpg"
+                    alt="Portufutbol"
+                    className="logo-image"
+                />
 
-                <div
-                    className="logo"
-                    onClick={() => window.location.reload()}
-                >
-                    <img src={logo} alt="logo" />
-
-                    <h1>PORTUFUTBOL</h1>
-                </div>
+                <h1 className="logo-title">
+                    PORTUFUTBOL
+                </h1>
 
             </div>
 
-            <SearchBar />
+            <div className="football-search">
+
+                <div className="football-icon">
+
+                    ⚽
+
+                </div>
+
+                <input
+                    type="text"
+                    placeholder="Buscar jugadores, camisetas, tacos..."
+                />
+
+            </div>
 
             <div className="header-actions">
 
-                <button className="delivery-btn">
-                    🚚 Entrega inmediata
+                <button className="access-btn">
+                    ⚫⚪
                 </button>
 
-                <ThemeToggle />
+                <button className="access-btn">
+                    ⚫⚪
+                </button>
 
-                <AccessibilityMenu />
+                <ThemeToggle
+                    toggleTheme={toggleTheme}
+                />
 
             </div>
 
         </header>
 
     );
+
 }

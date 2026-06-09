@@ -1,26 +1,16 @@
-import ThemeController
-from "../Controller/ThemeController";
-
-export default function ThemeToggle() {
-
-    const cambiarTema = () => {
-
-        const controller =
-            ThemeController.getInstance();
-
-        controller.toggleTheme();
-
-        window.location.reload();
-    };
+export default function ThemeToggle({ toggleTheme }) {
 
     return (
 
         <button
             className="theme-btn"
-            onClick={cambiarTema}
+            onClick={toggleTheme}
         >
-            🌙
+
+            ⚫⚪
+
         </button>
 
     );
+
 }
