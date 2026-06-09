@@ -1,30 +1,45 @@
 class ThemeManager {
-  static instance = null;
 
-  constructor() {
-    if (ThemeManager.instance) {
-      return ThemeManager.instance;
+    static instance = null;
+
+    constructor() {
+
+        if (ThemeManager.instance) {
+            return ThemeManager.instance;
+        }
+
+        this.theme = "dark";
+
+        ThemeManager.instance = this;
     }
 
-    this.theme = "dark";
-    ThemeManager.instance = this;
-  }
+    static getInstance() {
 
-  static getInstance() {
-    if (!ThemeManager.instance) {
-      ThemeManager.instance = new ThemeManager();
+        if (!ThemeManager.instance) {
+
+            ThemeManager.instance =
+                new ThemeManager();
+
+        }
+
+        return ThemeManager.instance;
     }
 
-    return ThemeManager.instance;
-  }
+    getTheme() {
 
-  getTheme() {
-    return this.theme;
-  }
+        return this.theme;
 
-  toggleTheme() {
-    this.theme = this.theme === "dark" ? "light" : "dark";
-  }
+    }
+
+    toggleTheme() {
+
+        this.theme =
+            this.theme === "dark"
+                ? "light"
+                : "dark";
+
+    }
+
 }
 
 export default ThemeManager;
