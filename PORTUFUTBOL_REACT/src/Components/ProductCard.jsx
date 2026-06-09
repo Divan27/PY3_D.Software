@@ -1,10 +1,50 @@
+export default function ProductCard({
 
-export default function ProductCard({producto}){
-const comprar=()=>window.open(`https://wa.me/50688888888?text=Hola,%20deseo%20comprar%20${producto.nombre}`,'_blank');
-return <div style={{border:'1px solid #ccc',margin:'10px',padding:'10px'}}>
-<h3>{producto.nombre}</h3>
-<p>{producto.descripcion}</p>
-<p>₡{producto.precio}</p>
-<button onClick={comprar}>Comprar por WhatsApp</button>
-</div>
+    nombre,
+    descripcion,
+    precio,
+    imagen
+
+}) {
+
+    const comprar = () => {
+
+        const mensaje =
+            `Hola, estoy interesado en ${nombre}`;
+
+        window.open(
+
+            `https://wa.me/50600000000?text=${encodeURIComponent(mensaje)}`,
+
+            "_blank"
+
+        );
+
+    };
+
+    return (
+
+        <div className="product-card">
+
+            <img
+                src={imagen}
+                alt={nombre}
+            />
+
+            <h3>{nombre}</h3>
+
+            <p>{descripcion}</p>
+
+            <h2>₡{precio}</h2>
+
+            <button
+                onClick={comprar}
+            >
+                Comprar por WhatsApp
+            </button>
+
+        </div>
+
+    );
+
 }

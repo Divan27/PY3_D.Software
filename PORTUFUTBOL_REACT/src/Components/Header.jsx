@@ -1,45 +1,47 @@
-export default function Header({
-  cambiarVista,
-  buscar,
-  setBuscar,
-  toggleTheme,
-  tema
-}) {
-  return (
-    <header className="header">
+import SearchBar from "./SearchBar";
+import ThemeToggle from "./ThemeToggle";
+import AccessibilityMenu from "./AccessibilityMenu";
 
-      <div className="logo">
-        PORTUFUTBOL
-      </div>
+import logo from "../assets/logos/logo.jpg";
 
-      <nav>
-        <button onClick={() => cambiarVista("inicio")}>
-          Inicio
-        </button>
+export default function Header() {
 
-        <button onClick={() => cambiarVista("productos")}>
-          Productos
-        </button>
+    return (
 
-        <button onClick={() => cambiarVista("categorias")}>
-          Categorías
-        </button>
-      </nav>
+        <header className="header">
 
-      <input
-        type="text"
-        placeholder="Buscar productos..."
-        value={buscar}
-        onChange={(e) => setBuscar(e.target.value)}
-      />
+            <div className="logo-container">
 
-      <button
-        className="themeButton"
-        onClick={toggleTheme}
-      >
-        {tema === "dark" ? "☀️ Claro" : "🌙 Oscuro"}
-      </button>
+                <button className="menu-btn">
+                    ☰
+                </button>
 
-    </header>
-  );
+                <div
+                    className="logo"
+                    onClick={() => window.location.reload()}
+                >
+                    <img src={logo} alt="logo" />
+
+                    <h1>PORTUFUTBOL</h1>
+                </div>
+
+            </div>
+
+            <SearchBar />
+
+            <div className="header-actions">
+
+                <button className="delivery-btn">
+                    🚚 Entrega inmediata
+                </button>
+
+                <ThemeToggle />
+
+                <AccessibilityMenu />
+
+            </div>
+
+        </header>
+
+    );
 }
