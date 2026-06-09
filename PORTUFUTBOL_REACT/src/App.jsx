@@ -1,66 +1,46 @@
-import { useState } from "react";
-
-import Header from "./Components/Header";
+import { useEffect, useState } from "react";
 
 import InicioView from "./View/InicioView";
-import ProductosView from "./View/ProductosView";
-import CategoriaView from "./View/CategoriaView";
-import ContactoView from "./View/ContactoView";
 
 import ThemeController from "./Controller/ThemeController";
 
-import "./styles/globals.css";
+function App() {
 
-export default function App() {
+    const controller = ThemeController.getInstance();
 
-  const themeController =
-    ThemeController.getInstance();
-
-  const [tema, setTema] =
-    useState(themeController.getTheme());
-
-  const [vista, setVista] =
-    useState("inicio");
-
-  const [buscar, setBuscar] =
-    useState("");
-
-  const toggleTheme = () => {
-
-    themeController.toggleTheme();
-
-    setTema(
-      themeController.getTheme()
+    const [theme, setTheme] = useState(
+        controller.getTheme()
     );
-  };
 
-  return (
-    <div className={`app ${tema}`}>
+    useEffect(() => {
 
-      <Header
-        cambiarVista={setVista}
-        buscar={buscar}
-        setBuscar={setBuscar}
-        toggleTheme={toggleTheme}
-        tema={tema}
-      />
+        document.body.className = theme;
 
-      {vista === "inicio" &&
-        <InicioView />
-      }
+    }, [theme]);
 
-      {vista === "productos" &&
-        <ProductosView />
-      }
+    const toggleTheme = () => {
 
-      {vista === "categorias" &&
-        <CategoriaView />
-      }
+        controller.toggleTheme();
 
-      {vista === "contacto" &&
-        <ContactoView />
-      }
+        setTheme(
+            controller.getTheme()
+        );
 
-    </div>
-  );
+    };
+
+    return (
+
+        <div className={`app ${theme}`}>
+
+            <InicioView
+                theme={theme}
+                toggleTheme={toggleTheme}
+            />
+
+        </div>
+
+    );
+
 }
+
+export default App;
