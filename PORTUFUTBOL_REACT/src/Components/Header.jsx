@@ -30,19 +30,29 @@ export default function Header({ toggleTheme }) {
 
                 <input
                     type="text"
-                    placeholder="Buscar jugadores, camisetas, tacos..."
+                    placeholder="Buscar uniformes, camisetas, tacos..."
                 />
 
             </div>
 
             <div className="header-actions">
 
-                <button className="access-btn">
-                    ⚫⚪
+                <button className="delivery-btn">
+                    🛒 Entrega Inmediata
                 </button>
 
-                <button className="access-btn">
-                    ⚫⚪
+                <button
+                    className="access-btn colorblind-btn"
+                    title="Modo Daltonismo"
+                >
+                    👁️
+                </button>
+
+                <button
+                    className="access-btn audio-btn"
+                    title="Modo Auditivo"
+                >
+                    🔊
                 </button>
 
                 <ThemeToggle
