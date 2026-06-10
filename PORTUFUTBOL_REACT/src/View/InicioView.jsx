@@ -1,6 +1,9 @@
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
 
+import facebook from "../assets/logos/facebook.png";
+import instagram from "../assets/logos/instagram.jpg";
+
 import JugadorCard from "../Components/JugadorCard";
 import ProductCard from "../Components/ProductCard";
 
@@ -9,16 +12,16 @@ import FooterInfo from "../Components/FooterInfo";
 import WhatsAppButton from "../Components/WhatsAppButton";
 
 import messi from "../assets/jugadores/messi.jpg";
-import cristiano from "../assets/jugadores/cristiano.png";
-import haaland from "../assets/jugadores/haaland.png";
-import mbappe from "../assets/jugadores/mbappe.png";
+import cristiano from "../assets/jugadores/cristiano.jpg";
+import haaland from "../assets/jugadores/haaland.jpg";
+import mbappe from "../assets/jugadores/mbappe.jpg";
 
-import bellingham from "../assets/jugadores/bellingham.png";
+import bellingham from "../assets/jugadores/bellingham.jpg";
 import vinicius from "../assets/jugadores/vinicius.jpg";
-import rodri from "../assets/jugadores/rodri.png";
+import rodri from "../assets/jugadores/rodri.jpg";
 import salah from "../assets/jugadores/salah.jpg";
 import kane from "../assets/jugadores/kane.jpg";
-import lautaro from "../assets/jugadores/lautaro.png";
+import lamine from "../assets/jugadores/lamine.jpg";
 
 import mercurial from "../assets/zapatos/mercurial.jpg";
 import predator from "../assets/zapatos/predator.jpg";
@@ -38,7 +41,7 @@ export default function InicioView({ toggleTheme }) {
         { numero: 7, nombre: "RODRI", imagen: rodri },
         { numero: 8, nombre: "SALAH", imagen: salah },
         { numero: 9, nombre: "KANE", imagen: kane },
-        { numero: 10, nombre: "LAUTARO", imagen: lautaro }
+        { numero: 10, nombre: "LAMINE YAMAL", imagen: lamine }
 
     ];
 
@@ -47,21 +50,21 @@ export default function InicioView({ toggleTheme }) {
         {
             nombre: "NIKE MERCURIAL",
             descripcion: "Velocidad Profesional",
-            precio: "₡219.999",
+            precio: "219.999",
             imagen: mercurial
         },
 
         {
             nombre: "ADIDAS PREDATOR",
             descripcion: "Control Total",
-            precio: "₡189.999",
+            precio: "189.999",
             imagen: predator
         },
 
         {
             nombre: "JOMA REGATE",
             descripcion: "Futsala Profesional",
-            precio: "₡129.999",
+            precio: "129.999",
             imagen: regate
         }
 
@@ -81,7 +84,7 @@ export default function InicioView({ toggleTheme }) {
                     <section className="section-container">
 
                         <h2 className="section-title">
-                            ⭐ TOP 10 JUGADORES
+                            ⭐ LOS 10 MEJORES DEL MUNDO
                         </h2>
 
                         <div className="players-grid">
@@ -104,7 +107,7 @@ export default function InicioView({ toggleTheme }) {
                     <section className="section-container">
 
                         <h2 className="section-title">
-                            🔥 MÁS VENDIDOS
+                            🔥 POPULARES
                         </h2>
 
                         <div className="products-grid">
@@ -172,13 +175,15 @@ export default function InicioView({ toggleTheme }) {
 
                         <h4>Redes Sociales</h4>
 
-                        <p>📘 Facebook</p>
+                        <div className="social-item">
+                            <img src={facebook} alt="Facebook" />
+                            <span>Facebook</span>
+                        </div>
 
-                        <p>📸 Instagram</p>
-
-                        <p>🎵 TikTok</p>
-
-                        <p>▶ YouTube</p>
+                        <div className="social-item">
+                            <img src={instagram} alt="Instagram" />
+                            <span>Instagram</span>
+                        </div>
 
                     </div>
 
