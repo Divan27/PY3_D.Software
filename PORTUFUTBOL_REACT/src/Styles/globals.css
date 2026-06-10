@@ -227,3 +227,18 @@ body.light{
     }
 
 }
+body.normal {
+    filter: none;
+}
+
+body.deuteranopia {
+    filter: sepia(35%) saturate(90%) hue-rotate(25deg);
+}
+
+body.tritanopia {
+    filter: sepia(20%) saturate(120%) hue-rotate(160deg);
+}
+
+body.protanopia {
+    filter: sepia(40%) saturate(85%) hue-rotate(-20deg);
+}
