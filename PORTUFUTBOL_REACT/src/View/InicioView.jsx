@@ -27,7 +27,7 @@ import mercurial from "../assets/zapatos/mercurial.jpg";
 import predator from "../assets/zapatos/predator.jpg";
 import regate from "../assets/zapatos/regate.jpg";
 
-export default function InicioView({ toggleTheme }) {
+export default function InicioView({ toggleTheme, colorBlindMode, setColorBlindMode }) {
 
     const jugadores = [
 
@@ -73,7 +73,11 @@ export default function InicioView({ toggleTheme }) {
     return (
 
         <>
-            <Header toggleTheme={toggleTheme} />
+            <Header
+                toggleTheme={toggleTheme}
+                colorBlindMode={colorBlindMode}
+                setColorBlindMode={setColorBlindMode}
+            />
 
             <div className="main-content">
 
