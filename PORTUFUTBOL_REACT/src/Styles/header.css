@@ -502,3 +502,43 @@
         transform:scale(1);
     }
 }
+.colorblind-container {
+    position: relative;
+}
+
+.colorblind-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 230px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #00c853;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 3000;
+}
+
+.colorblind-menu button {
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    background: #111;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+}
+
+.colorblind-menu button:hover,
+.colorblind-menu button.active {
+    background: #00c853;
+    color: black;
+}
+
+.audio-btn.active {
+    background: #00c853;
+    color: black;
+}
