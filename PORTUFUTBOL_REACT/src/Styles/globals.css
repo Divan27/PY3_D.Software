@@ -1,0 +1,603 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Segoe UI',sans-serif;
+
+    transition:all .4s ease;
+
+}
+
+/* ========================= */
+/* MODO OSCURO */
+/* ========================= */
+
+body.dark{
+
+    background-image:url("../assets/logos/fondoO.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+}
+
+/* ========================= */
+/* MODO CLARO */
+/* ========================= */
+
+body.light{
+
+    background-image:url("../assets/logos/fondoC.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:#102542;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p{
+
+    color:white;
+}
+
+.light h1,
+.light h2,
+.light h3{
+
+    color:#00f74a;
+}
+
+.light p{
+
+    color:#ffffff;
+}
+
+.app{
+
+    min-height:100vh;
+}
+
+.content{
+
+    width:100%;
+    padding:20px;
+}
+
+.section-container{
+
+    margin-bottom:35px;
+}
+
+.section-title{
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+}
+
+/* ================================= */
+/* ESTRUCTURA PRINCIPAL */
+/* ================================= */
+
+.main-content{
+
+    display:flex;
+
+    gap:25px;
+
+    padding:20px;
+
+    align-items:flex-start;
+}
+
+/* ================================= */
+/* CONTENIDO CENTRAL */
+/* ================================= */
+
+.content{
+
+    width:72%;
+}
+
+/* ================================= */
+/* PANEL EMPRESA */
+/* ================================= */
+
+.company-panel{
+
+    width:20%;
+
+    min-width:250px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    position:sticky;
+
+    top:120px;
+}
+
+/* MODO OSCURO */
+
+.dark .company-panel{
+
+    background:rgba(8,20,40,.85);
+
+    border:1px solid #00ff88;
+
+    color:white;
+}
+
+/* MODO CLARO */
+
+.light .company-panel{
+
+    background:rgba(135, 201, 255, 0.85); 
+
+    border:1px solid #0f4c5c;
+
+    color:#ffffff;
+}
+
+.company-panel h3{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    color:#00c853;
+}
+
+.company-panel p{
+
+    line-height:1.5;
+}
+
+.company-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.company-info span{
+
+    padding:10px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.company-info span:hover{
+
+    transform:translateX(6px);
+
+    background:rgba(0,255,136,.15);
+}
+
+.company-social{
+
+    margin-top:25px;
+}
+
+.company-social h4{
+
+    margin-bottom:10px;
+
+    color:#00c853;
+}
+
+.company-social p{
+
+    margin-bottom:8px;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:1200px){
+
+    .company-panel{
+
+        display:none;
+    }
+
+    .content{
+
+        width:100%;
+    }
+
+}
+body.normal {
+    filter: none;
+}
+
+body.deuteranopia {
+    filter: sepia(35%) saturate(90%) hue-rotate(25deg);
+}
+
+body.tritanopia {
+    filter: sepia(20%) saturate(120%) hue-rotate(160deg);
+}
+
+body.protanopia {
+    filter: sepia(40%) saturate(85%) hue-rotate(-20deg);
+}
+
+
+
+/* ================================= */
+/* COMPANY PANEL DESPLEGABLE */
+/* ================================= */
+
+.company-panel{
+    width:250px;
+    min-width:250px;
+    max-height:74px;
+    overflow:hidden;
+    cursor:pointer;
+    transform-origin:top center;
+    transition:
+        max-height .45s ease,
+        transform .35s ease,
+        box-shadow .35s ease,
+        padding .35s ease;
+}
+
+.company-panel:hover{
+    max-height:560px;
+    transform:scale(1.04);
+}
+
+.dark .company-panel:hover{
+    box-shadow:
+        0 0 20px rgba(0,255,136,.35),
+        0 0 35px rgba(0,255,136,.18);
+}
+
+.light .company-panel:hover{
+    box-shadow:
+        0 0 20px rgba(15,76,92,.25),
+        0 0 35px rgba(15,76,92,.15);
+}
+
+.company-panel h3{
+    margin-bottom:0;
+    transition:margin-bottom .35s ease;
+}
+
+.company-panel:hover h3{
+    margin-bottom:15px;
+}
+
+.company-panel p,
+.company-info,
+.company-social{
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-12px);
+    transition:
+        opacity .35s ease,
+        visibility .35s ease,
+        transform .35s ease;
+}
+
+.company-panel:hover p,
+.company-panel:hover .company-info,
+.company-panel:hover .company-social{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* ================================= */
+/* COMPANY PANEL - VERSION COMPACTA Y BOTON MODERNO */
+/* ================================= */
+
+.company-panel{
+    width:260px;
+    min-width:260px;
+    max-height:58px;
+    padding:12px 14px;
+    border-radius:22px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.company-panel:hover{
+    max-height:470px;
+    padding:16px 18px;
+    transform:scale(1.035);
+}
+
+.company-panel h3{
+    width:100%;
+    min-height:34px;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-size:1rem;
+    line-height:1;
+    letter-spacing:.5px;
+    border-radius:999px;
+    background:linear-gradient(135deg, rgba(0,255,136,.22), rgba(0,168,255,.16));
+    border:1px solid rgba(0,255,136,.65);
+    box-shadow:inset 0 0 12px rgba(0,255,136,.12), 0 0 12px rgba(0,255,136,.14);
+    transition:all .35s ease;
+}
+
+.company-panel:hover h3{
+    margin-bottom:10px;
+    transform:translateY(-1px);
+    box-shadow:inset 0 0 14px rgba(0,255,136,.18), 0 0 16px rgba(0,255,136,.25);
+}
+
+.company-panel p{
+    margin:0 0 8px 0;
+    font-size:.86rem;
+    line-height:1.38;
+}
+
+.company-info{
+    gap:6px;
+    margin-top:10px;
+}
+
+.company-info span{
+    padding:7px 9px;
+    border-radius:9px;
+    font-size:.86rem;
+    line-height:1.15;
+}
+
+.company-social{
+    margin-top:12px;
+}
+
+.company-social h4{
+    margin:0 0 8px 0;
+    font-size:.92rem;
+}
+
+.social-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:6px;
+    font-size:.85rem;
+}
+
+.social-item img{
+    width:22px;
+    height:22px;
+    object-fit:contain;
+}
+
+.light .company-panel h3{
+    background:linear-gradient(135deg, rgba(255,255,255,.65), rgba(135,201,255,.45));
+    border:1px solid rgba(15,76,92,.45);
+    color:#063b2a;
+}
+
+/* ================================= */
+/* AJUSTE DE CENTRADO GENERAL */
+/* ================================= */
+
+.main-content{
+    justify-content:center;
+    max-width:1580px;
+    margin:0 auto;
+    padding:24px 28px;
+}
+
+.content{
+    flex:1;
+    width:auto;
+    max-width:980px;
+}
+
+.company-panel{
+    width:230px;
+    min-width:230px;
+}
+
+body.protanopia {
+    filter: sepia(40%) saturate(85%) hue-rotate(-20deg);
+}
+
+@media(max-width:1350px){
+    .company-panel{
+        display:none;
+    }
+
+    .content{
+        max-width:1000px;
+    }
+}
+
+@media(max-width:980px){
+    .main-content{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .content,
+    .cart-panel{
+        width:100%;
+        max-width:900px;
+    }
+}
+
+/* ================================= */
+/* COLUMNA DERECHA CON VIDEO */
+/* ================================= */
+
+.right-side-widgets{
+    width:540px;
+    min-width:540px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    position:sticky;
+    top:110px;
+    align-self:flex-start;
+}
+
+.right-side-top{
+    display:flex;
+    align-items:flex-start;
+    gap:22px;
+}
+
+.right-side-widgets .cart-panel,
+.right-side-widgets .company-panel{
+    position:static;
+    top:auto;
+}
+
+.promo-video-card{
+    width:100%;
+    border-radius:24px;
+    padding:16px;
+    backdrop-filter:blur(12px);
+    overflow:hidden;
+}
+
+.dark .promo-video-card{
+    background:rgba(6,17,31,.92);
+    border:1px solid #00ff88;
+    box-shadow:0 0 26px rgba(0,255,136,.16);
+    color:white;
+}
+
+.light .promo-video-card{
+    background:rgba(230,246,255,.92);
+    border:1px solid #0f4c81;
+    box-shadow:0 0 22px rgba(15,76,129,.18);
+    color:#16324f;
+}
+
+.promo-video-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:14px;
+}
+
+.promo-video-header > span{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border-radius:15px;
+    background:linear-gradient(135deg, #00ff88, #00c8ff);
+    color:#06111f;
+    font-size:1.25rem;
+    box-shadow:0 0 18px rgba(0,255,136,.22);
+}
+
+.promo-video-header h3{
+    margin:0;
+    color:#00ff88;
+    font-size:1.18rem;
+}
+
+.light .promo-video-header h3{
+    color:#0f4c81;
+}
+
+.promo-video-header p{
+    margin:3px 0 0;
+    font-size:.88rem;
+    opacity:.9;
+}
+
+.promo-video-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:16 / 9;
+    border-radius:18px;
+    overflow:hidden;
+    background:rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.promo-video-frame iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+@media(max-width:1500px){
+    .main-content{
+        max-width:1180px;
+    }
+
+    .right-side-widgets{
+        width:280px;
+        min-width:280px;
+    }
+
+    .right-side-top{
+        flex-direction:column;
+    }
+
+    .right-side-widgets .cart-panel,
+    .right-side-widgets .company-panel{
+        width:100%;
+        min-width:100%;
+    }
+}
+
+@media(max-width:1350px){
+    .right-side-widgets{
+        position:static;
+        width:100%;
+        min-width:0;
+        max-width:1000px;
+    }
+
+    .right-side-top{
+        flex-direction:row;
+    }
+
+    .right-side-widgets .cart-panel,
+    .right-side-widgets .company-panel{
+        width:50%;
+        min-width:0;
+    }
+}
+
+@media(max-width:760px){
+    .right-side-top{
+        flex-direction:column;
+    }
+
+    .right-side-widgets .cart-panel,
+    .right-side-widgets .company-panel{
+        width:100%;
+    }
+}
