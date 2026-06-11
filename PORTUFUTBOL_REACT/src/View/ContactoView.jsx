@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function ContactoView({ translate }) {
 
     return (
@@ -12,3 +13,24 @@ export default function ContactoView({ translate }) {
 
     );
 }
+=======
+export default function ContactoView() {
+
+    return (
+
+        <div>
+
+            <h1>
+                Contacto
+            </h1>
+
+            <p>
+                Contacta con nosotros mediante WhatsApp.
+            </p>
+
+        </div>
+
+    );
+
+}
+>>>>>>> 43d8e518e86370a06a08bc4ea088d538171a243b

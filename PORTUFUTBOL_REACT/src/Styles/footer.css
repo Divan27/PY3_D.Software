@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .footer-info{
 
   display:grid;
@@ -22,4 +23,30 @@
   border-radius:10px;
 
   border:1px solid #39ff14;
+=======
+.footer-info{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:10px;
+
+  margin-top:25px;
+}
+
+.footer-info div{
+
+  background:rgba(0,0,0,.75);
+
+  color:white;
+
+  padding:15px;
+
+  text-align:center;
+
+  border-radius:10px;
+
+  border:1px solid #39ff14;
+>>>>>>> 43d8e518e86370a06a08bc4ea088d538171a243b
 }

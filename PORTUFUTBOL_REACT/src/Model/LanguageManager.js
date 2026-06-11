@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
     SpanishLanguageStrategy,
     EnglishLanguageStrategy
@@ -57,3 +58,46 @@ class LanguageManager {
 }
 
 export default LanguageManager;
+=======
+class LanguageManager {
+
+    static instance = null;
+
+    constructor() {
+
+        if(LanguageManager.instance){
+            return LanguageManager.instance;
+        }
+
+        this.language = "es";
+
+        LanguageManager.instance = this;
+    }
+
+    static getInstance(){
+
+        if(!LanguageManager.instance){
+
+            LanguageManager.instance =
+                new LanguageManager();
+        }
+
+        return LanguageManager.instance;
+    }
+
+    getLanguage(){
+
+        return this.language;
+    }
+
+    toggleLanguage(){
+
+        this.language =
+            this.language === "es"
+            ? "en"
+            : "es";
+    }
+}
+
+export default LanguageManager;
+>>>>>>> 43d8e518e86370a06a08bc4ea088d538171a243b

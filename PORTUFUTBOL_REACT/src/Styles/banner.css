@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .worldcup-banner{
 
   width:100%;
@@ -16,4 +17,24 @@
   display:block;
 
   object-fit:cover;
+=======
+.worldcup-banner{
+
+  width:100%;
+
+  overflow:hidden;
+
+  border-radius:20px;
+
+  border:2px solid #39ff14;
+}
+
+.worldcup-banner img{
+
+  width:100%;
+
+  display:block;
+
+  object-fit:cover;
+>>>>>>> 43d8e518e86370a06a08bc4ea088d538171a243b
 }

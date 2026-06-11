@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin:0;
     padding:0;
@@ -601,3 +602,251 @@ body.protanopia {
         width:100%;
     }
 }
+=======
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Segoe UI',sans-serif;
+
+    transition:all .4s ease;
+
+}
+
+/* ========================= */
+/* MODO OSCURO */
+/* ========================= */
+
+body.dark{
+
+    background-image:url("../assets/logos/fondoO.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+}
+
+/* ========================= */
+/* MODO CLARO */
+/* ========================= */
+
+body.light{
+
+    background-image:url("../assets/logos/fondoC.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:#102542;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p{
+
+    color:white;
+}
+
+.light h1,
+.light h2,
+.light h3{
+
+    color:#00f74a;
+}
+
+.light p{
+
+    color:#ffffff;
+}
+
+.app{
+
+    min-height:100vh;
+}
+
+.content{
+
+    width:100%;
+    padding:20px;
+}
+
+.section-container{
+
+    margin-bottom:35px;
+}
+
+.section-title{
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+}
+
+/* ================================= */
+/* ESTRUCTURA PRINCIPAL */
+/* ================================= */
+
+.main-content{
+
+    display:flex;
+
+    gap:25px;
+
+    padding:20px;
+
+    align-items:flex-start;
+}
+
+/* ================================= */
+/* CONTENIDO CENTRAL */
+/* ================================= */
+
+.content{
+
+    width:72%;
+}
+
+/* ================================= */
+/* PANEL EMPRESA */
+/* ================================= */
+
+.company-panel{
+
+    width:20%;
+
+    min-width:250px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    position:sticky;
+
+    top:120px;
+}
+
+/* MODO OSCURO */
+
+.dark .company-panel{
+
+    background:rgba(8,20,40,.85);
+
+    border:1px solid #00ff88;
+
+    color:white;
+}
+
+/* MODO CLARO */
+
+.light .company-panel{
+
+    background:rgba(135, 201, 255, 0.85); 
+
+    border:1px solid #0f4c5c;
+
+    color:#ffffff;
+}
+
+.company-panel h3{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    color:#00c853;
+}
+
+.company-panel p{
+
+    line-height:1.5;
+}
+
+.company-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.company-info span{
+
+    padding:10px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.company-info span:hover{
+
+    transform:translateX(6px);
+
+    background:rgba(0,255,136,.15);
+}
+
+.company-social{
+
+    margin-top:25px;
+}
+
+.company-social h4{
+
+    margin-bottom:10px;
+
+    color:#00c853;
+}
+
+.company-social p{
+
+    margin-bottom:8px;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:1200px){
+
+    .company-panel{
+
+        display:none;
+    }
+
+    .content{
+
+        width:100%;
+    }
+
+}
+body.normal {
+    filter: none;
+}
+
+body.deuteranopia {
+    filter: sepia(35%) saturate(90%) hue-rotate(25deg);
+}
+
+body.tritanopia {
+    filter: sepia(20%) saturate(120%) hue-rotate(160deg);
+}
+
+body.protanopia {
+    filter: sepia(40%) saturate(85%) hue-rotate(-20deg);
+}
+
+
+>>>>>>> 43d8e518e86370a06a08bc4ea088d538171a243b

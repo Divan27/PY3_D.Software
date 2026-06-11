@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default function FooterInfo({ translate }) {
 
     return (
@@ -13,3 +14,33 @@ export default function FooterInfo({ translate }) {
 
     );
 }
+=======
+
+export default function FooterInfo() {
+
+    return (
+
+        <footer className="footer-info">
+
+            <div>
+                🚚 Envíos a todo el país
+            </div>
+
+            <div>
+                💳 Pagos seguros
+            </div>
+
+            <div>
+                🔄 Cambios fáciles
+            </div>
+
+            <div>
+                🛡 Garantía de fábrica
+            </div>
+
+        </footer>
+
+    );
+
+}
+>>>>>>> 43d8e518e86370a06a08bc4ea088d538171a243b
