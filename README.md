@@ -214,7 +214,7 @@ PORTUFUTBOL incorpora diversas funcionalidades orientadas a mejorar la experienc
 ## Integrantes
 
 * Daryll Martínez Rodríguez
-* Divan (según repositorio del proyecto)
+* Dilan Zamora Sanchez 
 
 ---
 
