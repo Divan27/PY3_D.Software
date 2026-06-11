@@ -1,47 +1,1074 @@
+/* ================================= */
+/* SIDEBAR */
+/* ================================= */
+
 .sidebar{
 
-  width:230px;
+    width:220px;
 
-  background:rgba(5,11,18,.95);
+    min-width:220px;
 
-  border:1px solid #39ff14;
+    padding:20px;
 
-  border-radius:20px;
+    border-radius:20px;
 
-  padding:20px;
+    backdrop-filter:blur(10px);
 
-  height:fit-content;
+    position:relative;
 
-  position:sticky;
+    z-index:2000;
 
-  top:100px;
+    top:120px;
+
+    transition:all .4s ease;
 }
+
+/* ================================= */
+/* MODO OSCURO */
+/* ================================= */
+
+.dark .sidebar{
+
+    background:rgba(8,20,40,.85);
+
+    border:1px solid #00ff88;
+
+    box-shadow:
+        0 0 15px rgba(0,255,136,.2);
+}
+
+.dark .sidebar-title{
+
+    color:#00ff88;
+}
+
+.dark .sidebar li{
+
+    color:white;
+}
+
+/* ================================= */
+/* MODO CLARO */
+/* ================================= */
+
+.light .sidebar{
+
+    background:rgba(138, 202, 255, 0.85);
+
+    border:1px solid #0f4c5c;
+
+    box-shadow:
+        0 0 15px rgba(15,76,92,.15);
+}
+
+.light .sidebar-title{
+
+    color:#0f4c81;
+}
+
+.light .sidebar li{
+
+    color:#ffffff;
+}
+
+/* ================================= */
+/* TITULO */
+/* ================================= */
+
+.sidebar-title{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+/* ================================= */
+/* LISTA */
+/* ================================= */
 
 .sidebar ul{
 
-  list-style:none;
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
 }
 
 .sidebar li{
 
-  padding:15px;
+    padding:12px;
 
-  margin-bottom:10px;
+    border-radius:12px;
 
-  border-radius:12px;
+    cursor:pointer;
 
-  cursor:pointer;
+    font-weight:600;
 
-  transition:.3s;
-
-  color:white;
-
-  font-weight:600;
+    transition:.3s;
 }
+
+/* ================================= */
+/* HOVER */
+/* ================================= */
 
 .sidebar li:hover{
 
-  background:#39ff14;
+    transform:translateX(8px);
+}
 
-  color:black;
+/* Hover oscuro */
+
+.dark .sidebar li:hover{
+
+    background:rgba(0,255,136,.15);
+
+    color:#00ff88;
+}
+
+/* Hover claro */
+
+.light .sidebar li:hover{
+
+    background:rgba(15,76,129,.15);
+
+    color:#0f4c81;
+}
+
+/* ================================= */
+/* ITEM ACTIVO */
+/* ================================= */
+
+.sidebar li.active{
+
+    font-weight:bold;
+}
+
+/* Oscuro */
+
+.dark .sidebar li.active{
+
+    background:#00ff88;
+
+    color:#081428;
+}
+
+/* Claro */
+
+.light .sidebar li.active{
+
+    background:#0f4c81;
+
+    color:white;
+}
+
+/* ================================= */
+/* MENU CLUBES */
+/* ================================= */
+
+.clubs-menu{
+
+    position:relative;
+
+    z-index:9999;
+}
+
+.clubs-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:340px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-15px);
+
+    transition:.35s;
+
+    z-index:9999;
+}
+
+/* MODO OSCURO */
+
+.dark .clubs-dropdown{
+
+    background:rgba(8,20,40,.97);
+
+    border:1px solid #00ff88;
+}
+
+/* MODO CLARO */
+
+.light .clubs-dropdown{
+
+    background:rgba(97,184,255,.97);
+
+    border:1px solid #16324f;
+}
+
+.clubs-menu:hover .clubs-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+.league-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.dark .league-card{
+
+    background:rgba(255,255,255,.05);
+}
+
+.light .league-card{
+
+    background:rgba(255,255,255,.25);
+}
+
+.league-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 10px rgba(0,255,136,.4);
+}
+
+.league-card img{
+
+    width:40px;
+
+    height:40px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+}
+
+.league-card span{
+
+    font-size:.85rem;
+
+    font-weight:600;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:1200px){
+
+    .sidebar{
+
+        display:none;
+    }
+
+}
+
+/* ================================= */
+/* SELECCIONES */
+/* ================================= */
+
+.teams-menu{
+
+    position:relative;
+}
+
+.teams-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:360px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-15px);
+
+    transition:.35s;
+
+    z-index:99999;
+}
+
+.dark .teams-dropdown{
+
+    background:rgba(8,20,40,.97);
+
+    border:1px solid #00ff88;
+}
+
+.light .teams-dropdown{
+
+    background:rgba(97,184,255,.97);
+
+    border:1px solid #16324f;
+}
+
+.teams-menu:hover .teams-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+.team-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.dark .team-card{
+
+    background:rgba(255,255,255,.05);
+}
+
+.light .team-card{
+
+    background:rgba(255,255,255,.25);
+}
+
+.team-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 10px rgba(0,255,136,.4);
+}
+
+.team-card img{
+
+    width:40px;
+
+    height:40px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+}
+
+.team-card span{
+
+    font-size:.85rem;
+
+    font-weight:600;
+}
+
+/* ================================= */
+/* ESPECIALES */
+/* ================================= */
+
+.specials-menu{
+
+    position:relative;
+}
+
+.specials-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:280px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-15px);
+
+    transition:.35s;
+
+    z-index:99999;
+}
+
+/* MODO OSCURO */
+
+.dark .specials-dropdown{
+
+    background:rgba(8,20,40,.97);
+
+    border:1px solid #00ff88;
+}
+
+/* MODO CLARO */
+
+.light .specials-dropdown{
+
+    background:rgba(97,184,255,.97);
+
+    border:1px solid #16324f;
+}
+
+.specials-menu:hover .specials-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+.special-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.dark .special-card{
+
+    background:rgba(255,255,255,.05);
+}
+
+.light .special-card{
+
+    background:rgba(255,255,255,.25);
+}
+
+.special-card:hover{
+
+    transform:translateX(5px);
+
+    box-shadow:0 0 12px rgba(0,255,136,.4);
+}
+
+.special-icon{
+
+    font-size:1.4rem;
+}
+
+.special-card span:last-child{
+
+    font-size:.9rem;
+
+    font-weight:600;
+}
+
+/* ================================= */
+/* ZAPATOS */
+/* ================================= */
+
+.shoes-menu{
+
+    position:relative;
+}
+
+.shoes-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:620px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-15px);
+
+    transition:.35s;
+
+    z-index:99999;
+}
+
+/* MODO OSCURO */
+
+.dark .shoes-dropdown{
+
+    background:rgba(8,20,40,.97);
+
+    border:1px solid #00ff88;
+}
+
+/* MODO CLARO */
+
+.light .shoes-dropdown{
+
+    background:rgba(97,184,255,.97);
+
+    border:1px solid #16324f;
+}
+
+.shoes-menu:hover .shoes-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+.shoe-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.shoe-column h4{
+
+    padding-bottom:8px;
+
+    margin-bottom:6px;
+
+    border-bottom:2px solid #00ff88;
+
+    color:#00ff88;
+
+    font-size:1rem;
+}
+
+.light .shoe-column h4{
+
+    color:#16324f;
+    border-color:#16324f;
+}
+
+.shoe-item{
+
+    padding:10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:.9rem;
+
+    font-weight:500;
+}
+
+.dark .shoe-item{
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+}
+
+.light .shoe-item{
+
+    background:rgba(255,255,255,.25);
+
+    color:#16324f;
+}
+
+.shoe-item:hover{
+
+    transform:translateX(5px);
+
+    box-shadow:0 0 10px rgba(0,255,136,.4);
+}
+
+/* ================================= */
+/* PARA NIÑOS */
+/* ================================= */
+
+.kids-menu{
+
+    position:relative;
+}
+
+.kids-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:280px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-15px);
+
+    transition:.35s;
+
+    z-index:99999;
+}
+
+/* MODO OSCURO */
+
+.dark .kids-dropdown{
+
+    background:rgba(8,20,40,.97);
+
+    border:1px solid #00ff88;
+}
+
+/* MODO CLARO */
+
+.light .kids-dropdown{
+
+    background:rgba(97,184,255,.97);
+
+    border:1px solid #16324f;
+}
+
+.kids-menu:hover .kids-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+.kids-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.dark .kids-card{
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+}
+
+.light .kids-card{
+
+    background:rgba(255,255,255,.25);
+
+    color:#16324f;
+}
+
+.kids-card:hover{
+
+    transform:translateX(5px);
+
+    box-shadow:0 0 12px rgba(0,255,136,.4);
+}
+
+.kids-icon{
+
+    font-size:1.3rem;
+
+    min-width:25px;
+}
+
+.premier-card{
+
+    position:relative;
+}
+
+.premier-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:300px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-10px);
+
+    transition:.3s;
+
+    z-index:99999;
+}
+
+.dark .premier-dropdown{
+
+    background:rgba(8,20,40,.98);
+
+    border:1px solid #00ff88;
+}
+
+.light .premier-dropdown{
+
+    background:rgba(97,184,255,.98);
+
+    border:1px solid #16324f;
+}
+
+.premier-card:hover .premier-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+.club-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.dark .club-card{
+
+    background:rgba(255,255,255,.05);
+}
+
+.light .club-card{
+
+    background:rgba(255,255,255,.25);
+}
+
+.club-card:hover{
+
+    transform:translateX(5px);
+
+    box-shadow:0 0 12px rgba(0,255,136,.4);
+}
+
+.club-card img{
+
+    width:35px;
+
+    height:35px;
+
+    object-fit:contain;
+}
+
+.club-card span{
+
+    font-size:.9rem;
+
+    font-weight:600;
+}
+
+/* ============================= */
+/* LALIGA */
+/* ============================= */
+
+.laliga-card{
+
+    position:relative;
+}
+
+.laliga-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:300px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-10px);
+
+    transition:.3s;
+
+    z-index:99999;
+}
+
+.dark .laliga-dropdown{
+
+    background:rgba(8,20,40,.98);
+
+    border:1px solid #00ff88;
+}
+
+.light .laliga-dropdown{
+
+    background:rgba(97,184,255,.98);
+
+    border:1px solid #16324f;
+}
+
+.laliga-card:hover .laliga-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+/* ============================= */
+/* LIGUE 1 */
+/* ============================= */
+
+.ligue1-card{
+
+    position:relative;
+}
+
+.ligue1-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:300px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-10px);
+
+    transition:.3s;
+
+    z-index:99999;
+}
+
+.dark .ligue1-dropdown{
+
+    background:rgba(8,20,40,.98);
+
+    border:1px solid #00ff88;
+}
+
+.light .ligue1-dropdown{
+
+    background:rgba(97,184,255,.98);
+
+    border:1px solid #16324f;
+}
+
+.ligue1-card:hover .ligue1-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+}
+
+/* ============================= */
+/* MLS */
+/* ============================= */
+
+.mls-card{
+
+    position:relative;
+}
+
+.mls-dropdown{
+
+    position:absolute;
+
+    left:105%;
+
+    top:0;
+
+    width:280px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(-10px);
+
+    transition:.3s;
+
+    z-index:99999;
+}
+
+.dark .mls-dropdown{
+
+    background:rgba(8,20,40,.98);
+
+    border:1px solid #00ff88;
+}
+
+.light .mls-dropdown{
+
+    background:rgba(97,184,255,.98);
+
+    border:1px solid #16324f;
+}
+
+.mls-card:hover .mls-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
 }

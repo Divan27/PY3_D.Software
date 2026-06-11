@@ -54,12 +54,12 @@ body.light{
 .light h2,
 .light h3{
 
-    color:#102542;
+    color:#00f74a;
 }
 
 .light p{
 
-    color:#1d3557;
+    color:#ffffff;
 }
 
 .app{
@@ -145,11 +145,11 @@ body.light{
 
 .light .company-panel{
 
-    background:rgba(255,255,255,.85);
+    background:rgba(135, 201, 255, 0.85); 
 
     border:1px solid #0f4c5c;
 
-    color:#102542;
+    color:#ffffff;
 }
 
 .company-panel h3{
@@ -242,3 +242,5 @@ body.tritanopia {
 body.protanopia {
     filter: sepia(40%) saturate(85%) hue-rotate(-20deg);
 }
+
+

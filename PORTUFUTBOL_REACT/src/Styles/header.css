@@ -116,39 +116,35 @@
 
 .delivery-btn{
 
+    min-width:180px;
+
+    height:55px;
+
+    padding:0 20px;
+
     border:none;
 
     border-radius:30px;
 
-    padding:12px 22px;
-
-    background:linear-gradient(
-        135deg,
-        #00c853,
-        #00ff88
-    );
-
-    color:white;
-
     font-weight:700;
+
+    font-size:0.9rem;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:all .3s ease;
 }
 
 .delivery-btn:hover{
 
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 0 15px #00ff88,
-        0 0 30px rgba(0,255,136,.4);
+    transform:translateY(-3px) scale(1.03);
 }
 /*DALTONISMO*/
 .colorblind-btn{
 
     animation:colorPulse 3s infinite;
+
+    color:black !important;
 }
 
 /*AUDITIVO*/
@@ -267,25 +263,29 @@
 .access-btn,
 .theme-btn{
 
-    width:60px;
+    display:flex;
 
-    height:60px;
+    align-items:center;
 
-    border-radius:50%;
+    justify-content:center;
 
-    border:3px solid white;
+    padding:12px 18px;
 
-    background:#00c853;
+    min-height:50px;
 
-    color:white;
+    border-radius:30px;
+
+    border:none;
 
     cursor:pointer;
 
-    font-size:1.1rem;
+    font-size:0.8rem;
 
-    transition:0.3s;
+    font-weight:700;
 
-    animation:themeRotate 4s linear infinite;
+    white-space:nowrap;
+
+    transition:all .3s ease;
 }
 
 .access-btn:hover,
@@ -299,6 +299,25 @@
 /* ===================================== */
 /* MODO OSCURO */
 /* ===================================== */
+
+.dark .delivery-btn{
+
+    background:#0f4c81;
+
+    color:rgb(0, 0, 0);
+
+    border:2px solid #00ff88;
+
+    box-shadow:
+        0 0 10px rgba(0,255,136,.3);
+}
+
+.dark .delivery-btn:hover{
+
+    box-shadow:
+        0 0 15px #00ff88,
+        0 0 30px rgba(0,255,136,.4);
+}
 
 .dark .header{
 
@@ -318,6 +337,25 @@
 /* ===================================== */
 /* MODO CLARO */
 /* ===================================== */
+
+.light .delivery-btn{
+
+    background:#00c853;
+
+    color:rgb(0, 0, 0);
+
+    border:2px solid #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(0,200,83,.3);
+}
+
+.light .delivery-btn:hover{
+
+    box-shadow:
+        0 0 15px #00c853,
+        0 0 30px rgba(0,200,83,.4);
+}
 
 .light .header{
 
@@ -361,6 +399,8 @@
 .light .theme-btn{
 
     background:#16324f;
+
+    color:#ffffff;
 }
 
 .social-item{
@@ -387,6 +427,47 @@
 .social-item span{
     font-size:0.9rem;
     font-weight:500;
+}
+
+.language-btn{
+
+    min-width:180px;
+
+    height:60px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.dark .language-btn{
+
+    background:#ffffff;
+
+    color:rgb(0, 0, 0);
+
+    border:2px solid #61b8ff;
+}
+
+.light .language-btn{
+
+    background:#16324f;
+
+    color:white;
+
+    border:2px solid #61b8ff;
+}
+
+.language-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 15px #61b8ff;
 }
 
 /* ===================================== */
