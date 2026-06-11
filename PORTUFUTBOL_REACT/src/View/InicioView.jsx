@@ -1,15 +1,15 @@
-import Header from "../Components/Header";
-import Sidebar from "../Components/Sidebar";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 import facebook from "../assets/logos/facebook.png";
 import instagram from "../assets/logos/instagram.jpg";
 
-import JugadorCard from "../Components/JugadorCard";
-import ProductCard from "../Components/ProductCard";
+import JugadorCard from "./JugadorCard";
+import ProductCard from "./ProductCard";
 
-import MundialBanner from "../Components/MundialBanner";
-import FooterInfo from "../Components/FooterInfo";
-import WhatsAppButton from "../Components/WhatsAppButton";
+import MundialBanner from "./MundialBanner";
+import FooterInfo from "./FooterInfo";
+import WhatsAppButton from "./WhatsAppButton";
 
 import messi from "../assets/jugadores/messi.jpg";
 import cristiano from "../assets/jugadores/cristiano.jpg";
@@ -27,21 +27,21 @@ import mercurial from "../assets/zapatos/mercurial.jpg";
 import predator from "../assets/zapatos/predator.jpg";
 import regate from "../assets/zapatos/regate.jpg";
 
-export default function InicioView({ toggleTheme, colorBlindMode, setColorBlindMode }) {
+export default function InicioView({ toggleTheme, toggleLanguage, colorBlindMode, setColorBlindMode }) {
 
     const jugadores = [
 
-        { numero: 1, nombre: "MESSI", imagen: messi },
-        { numero: 2, nombre: "CRISTIANO", imagen: cristiano },
-        { numero: 3, nombre: "HAALAND", imagen: haaland },
-        { numero: 4, nombre: "MBAPPÉ", imagen: mbappe },
-        { numero: 5, nombre: "BELLINGHAM", imagen: bellingham },
+        { numero: 1,nombre: "MESSI", precio:"$2000", imagen: messi },
+        { numero: 2, nombre: "CRISTIANO",  precio:"$999.9", imagen: cristiano },
+        { numero: 3, nombre: "HAALAND",  precio:"$999.9", imagen: haaland },
+        { numero: 4, nombre: "MBAPPÉ",  precio:"$999.9", imagen: mbappe },
+        { numero: 5, nombre: "BELLINGHAM",  precio:"$999.9", imagen: bellingham },
 
-        { numero: 6, nombre: "VINICIUS JR.", imagen: vinicius },
-        { numero: 7, nombre: "RODRI", imagen: rodri },
-        { numero: 8, nombre: "SALAH", imagen: salah },
-        { numero: 9, nombre: "KANE", imagen: kane },
-        { numero: 10, nombre: "LAMINE YAMAL", imagen: lamine }
+        { numero: 6, nombre: "VINICIUS JR.", precio:"$999.9", imagen: vinicius },
+        { numero: 7, nombre: "RODRI", precio:"$999.9", imagen: rodri },
+        { numero: 8, nombre: "SALAH", precio:"$999.9", imagen: salah },
+        { numero: 9, nombre: "KANE", precio:"$999.9", imagen: kane },
+        { numero: 10, nombre: "LAMINE YAMAL", precio:"$999.9", imagen: lamine }
 
     ];
 
@@ -50,21 +50,21 @@ export default function InicioView({ toggleTheme, colorBlindMode, setColorBlindM
         {
             nombre: "NIKE MERCURIAL",
             descripcion: "Velocidad Profesional",
-            precio: "219.999",
+            precio: "$459.99",
             imagen: mercurial
         },
 
         {
             nombre: "ADIDAS PREDATOR",
             descripcion: "Control Total",
-            precio: "189.999",
+            precio: "$395.99",
             imagen: predator
         },
 
         {
             nombre: "JOMA REGATE",
             descripcion: "Futsala Profesional",
-            precio: "129.999",
+            precio: "$260.99",
             imagen: regate
         }
 
@@ -75,6 +75,7 @@ export default function InicioView({ toggleTheme, colorBlindMode, setColorBlindM
         <>
             <Header
                 toggleTheme={toggleTheme}
+                toggleLanguage={toggleLanguage}
                 colorBlindMode={colorBlindMode}
                 setColorBlindMode={setColorBlindMode}
             />
